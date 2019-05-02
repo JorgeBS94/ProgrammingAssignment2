@@ -1,7 +1,7 @@
 ## These functions create a special matrix and cache its inverse, which is computationally
 #more efficient than computing the inverse every time it is needed.
 
-## The first function creates a matrix and it has a list of functions able to set the value of the matrix (set),
+## The first function creates a matrix. It consists of a list of functions able to set the value of the matrix (set),
 #retrieve its value (get), compute its inverse (setinv) and give it back (getinv).
 
 makeCacheMatrix <- function(x = matrix ()) {
@@ -19,7 +19,8 @@ makeCacheMatrix <- function(x = matrix ()) {
 }
 
 ## The second function retrieves the inverse stored in cache. If that is possible, it stops. Otherwise, it uses the get 
-#function defined previously to obtain the matrix we defined and it computes its inverse, caching it via the setinv function.
+#function defined in makeCacheMatrix and it obtains the matrix we created. Then, it computes its inverse and caches its value via the
+#setinv function.
 
 cacheSolve <- function(x, ...) {
   inv <- x$getinv()
